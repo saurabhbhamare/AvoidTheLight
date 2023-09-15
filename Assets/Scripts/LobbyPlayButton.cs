@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LobbyPlayButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Button playButton;
+    public void Start()
     {
-        
+        playButton.onClick.AddListener(PlayGame);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void PlayGame()
     {
-        
+        SceneManager.LoadScene("Game");
     }
 }

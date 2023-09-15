@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidbody;
     public ScoreController scoreController;
     public GameOverController gameOverController;
+    
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Game over");
             gameOverController.PlayerDied();
+            this.enabled = false;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
